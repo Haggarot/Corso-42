@@ -3,14 +3,16 @@
         {
             "name": "Linux",
             "includePath": [
-                "${default}"
+                "${default}",
+                "${workspaceFolder}/libft.a"
             ],
             "defines": [
                 "stdio.h",
                 "unistd.h",
                 "stdlib.h",
                 "libft.h",
-                "stddef.h"
+                "stddef.h",
+                "/home/nicco/42Luiss/Corso 42/libft.a/libft.h"
             ],
             "compilerPath": "/usr/bin/cpp",
             "cStandard": "c17",
