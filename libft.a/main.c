@@ -1,9 +1,9 @@
 /*
 prova BZERO
 */
-#include <libft.h>
+#include "libft.h"
 
-/*
+
 int main()
 {
    char *s;
@@ -14,4 +14,4 @@ int main()
    ft_putnchar(s, ft_strlen(s));
    return(0);
 }
-*/
+

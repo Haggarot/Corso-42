@@ -11,8 +11,7 @@
                 "unistd.h",
                 "stdlib.h",
                 "libft.h",
-                "stddef.h",
-                "/home/nicco/42Luiss/Corso 42/libft.a/libft.h"
+                "stddef.h"
             ],
             "compilerPath": "/usr/bin/cpp",
             "cStandard": "c17",
