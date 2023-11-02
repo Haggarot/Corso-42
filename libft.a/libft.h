@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
 
 /*CHECK*/
 int     ft_isalnum(int n);
@@ -23,4 +24,11 @@ void	ft_putnchar(char c, int n);
 void    ft_memset(void *s, int c, size_t n);
 void    ft_bzero(void *s, size_t n);
 
+/*STRING*/
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+/*CHAR*/
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 #endif

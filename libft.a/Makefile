@@ -2,7 +2,7 @@ FLAGS:= -Wall -Werror -Wextra
 
 NAME= libft.a
 
-PART-1:= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove
+FILES-1:= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove
 
 OBJECTS-1:= $(patsubst %, %.o, $(FILES-1))
 OBJECTS-2:= $(patsubst %, %.o, $(FILES-2))
