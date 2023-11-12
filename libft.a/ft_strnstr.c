@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 10:52:32 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/12 11:15:31 by nbianchi         ###   ########.fr       */
+/*   Created: 2023/11/12 11:09:35 by nbianchi          #+#    #+#             */
+/*   Updated: 2023/11/12 11:43:05 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *str, const char *lookfor, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	if (!str && !len)
+		return (0);
+	if (lookfor[0] == '\0' || lookfor == str)
+		return ((char *)str);
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
+		j = 0;
+		while (str[i + j] == lookfor[j] && (i + j) < len)
 		{
-			return (s1[i] - s2[i]);
+			if (str[i + j] == '\0' && lookfor[j] == '\0')
+				return ((char *)&str[i]);
+			j++;
 		}
+		if (lookfor[j] == '\0')
+			return ((char *)(str + i));
 		i++;
-	}
-	if (i != n)
-	{
-		return (s1[i] - s2[i]);
 	}
 	return (0);
 }

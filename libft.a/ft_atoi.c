@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 10:45:49 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/12 11:15:31 by nbianchi         ###   ########.fr       */
+/*   Created: 2023/11/12 11:47:25 by nbianchi          #+#    #+#             */
+/*   Updated: 2023/11/12 13:05:31 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
-	int	i;
+	short	odd;
+	int		nbr;
 
-	i = 0;
-
-	while(s[i])
+	odd = 0;
+	nbr = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 	{
-		if(s[i] == (char)c)
-			return((char *)(s + i));
-		else
-			i++;
+		++str;
 	}
-	return(0);
+	while (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			odd++;
+		++str;
+	}
+	while (*str >= 48 && *str <= 57)
+	{
+		nbr *= 10;
+		nbr += *str - 48;
+		++str;
+	}
+	if (!(odd % 2))
+		return (nbr);
+	return (-nbr);
 }
