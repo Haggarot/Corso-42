@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:45:49 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/12 11:15:31 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:06:29 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char *ft_strchr(const char *s, int c)
 
 	i = 0;
 
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == (char)c)
-			return((char *)(s + i));
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
 		else
 			i++;
 	}
-	return(0);
+	return (0);
 }

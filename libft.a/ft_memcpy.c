@@ -6,9 +6,11 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:45:37 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 17:03:05 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:53:47 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void ft_memcpy(void *dest, const void *src, size_t n)
 {
