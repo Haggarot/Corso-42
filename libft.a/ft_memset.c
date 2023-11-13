@@ -6,11 +6,11 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:45:41 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 18:20:20 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:46:31 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void *ft_memset(void *s, int c, size_t n)
 {

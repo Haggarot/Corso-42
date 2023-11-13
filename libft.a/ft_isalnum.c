@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:45:12 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 17:48:08 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:46:04 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int n)
 {
-	if (ft_isalpha(n) = 1 || ft_isdigit(n) = 1)
+	if (ft_isalpha(n) == 1 || ft_isdigit(n) == 1)
 		return (1);
 	return (0);
 }

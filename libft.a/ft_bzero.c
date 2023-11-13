@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:45:01 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 18:25:31 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:47:47 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void ft_bzero(void *s, size_t n)
 {
     size_t  i;
-    char    str;
+    char    *str;
 
     i = 0;
-    *str = s;
+    str = s;
     while (i < n)
     {
-        str[i] = '/0';
+        str[i] = '\0';
         i++;
     }
-    return(s);
+    return();
 }
