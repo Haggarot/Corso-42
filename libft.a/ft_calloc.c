@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 13:03:56 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/12 13:14:22 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:01:07 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	array;
+	void	*array;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);

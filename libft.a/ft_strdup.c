@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 13:19:02 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 16:45:44 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:04:56 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_strdup(const char *s)
 	if (dst == NULL)
 		return (NULL);
 	ft_memcpy(dst, s, size);
-	dst[size] = '\0'
+	dst[size] = '\0';
+	return (dst);
 }

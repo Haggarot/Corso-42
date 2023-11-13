@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:46:20 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 18:49:49 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:04:12 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int		ft_isprint(int c);
 int		ft_strlen(const char *str);
 
 /*PRINT*/
-void	ft_putnchar(char c, int n);
+void	ft_putnchar(char *c, int n);
 void	ft_putchar(char c);
 
 /*MEMORY*/
-void	ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
