@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:28:58 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 18:30:45 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/21 22:15:32 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(const char *s1, const char *s2);
 {
-	char			*join;
-	unsigned int	i;
-	unsigned int	j;
+	char	*join;
+	int		i;
+	int		j;
 
 	if (!s1 || !s2)
 		return (NULL);
