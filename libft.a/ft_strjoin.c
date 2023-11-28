@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:28:58 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/27 23:27:49 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:22:57 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(const char *s1, const char *s2);
 	}
 	while (s2[j])
 	{
-		join[i] = s1[j];
+		join[i] = s2[j];
 		i++;
 		j++;
 	}

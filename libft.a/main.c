@@ -6,13 +6,13 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:46:38 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 09:06:22 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:19:22 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ft_split
-*/
+
 #include "libft.h"
 
 int	main(void)
@@ -39,7 +39,7 @@ int	main(void)
 	}
 	return (0);
 }
-
+*/
 /*
 ft_itoa
 */
