@@ -1,33 +1,29 @@
-FLAGS:= -Wall -Werror -Wextra
+CC := gcc
+FLAGS := -Wall -Werror -Wextra
+NAME := libft.a
 
-NAME= libft.a
+SRC_1 := ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memset.c ft_putchar.c ft_putnchar.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c
+SRC_2 := ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+BONUS := ./bonus/ft_lstnew.c ./bonus/ft_lstadd_front.c ./bonus/ft_lstsize.c ./bonus/ft_lstlast.c ./bonus/ft_lstadd_back.c ./bonus/ft_lstdelone.c ./bonus/ft_lstclear.c ./bonus/ft_lstiter.c ./bonus/ft_lstmap.c
 
-FILES-1:= ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_memchr ft_memcmp ft_memcpy ft_memset ft_putchar ft_putnchar ft_strchr ft_strdup ft_strlcat ft_strlcpy ft_strlen ft_strncmp ft_strnstr ft_strrchr ft_tolower ft_toupper
-FILES-2:= ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd
-BONUS:= ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
-
-OBJECTS-1:= $(patsubst %, %.o, $(FILES-1))
-OBJECTS-2:= $(patsubst %, %.o, $(FILES-2))
-OBJECTS-BONUS:= $(patsubst %, %.o, $(BONUS))
+OBJ_1 := $(SRC_1:.c=.o)
+OBJ_2 := $(SRC_2:.c=.o)
+OBJ_BONUS := $(BONUS:.c=.o)
 
 all: $(NAME)
-	
-$(NAME):
-	gcc $(FLAGS) -c $(patsubst %, %.c, $(FILES-1)) $(patsubst %, %.c, $(FILES-2))
-	ar -rc $(NAME) $(OBJECTS-1) $(OBJECTS-2)
-	ranlib $(NAME)
 
-bonus: $(OBJECTS-B)
-	gcc $(FLAGS) -c $(patsubst %, %.c, $(BONUS))
-	ar -rc $(NAME) $(OBJECTS-B)
-	ranlib $(NAME)
+$(NAME): $(OBJ_1) $(OBJ_2) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_1) $(OBJ_2) $(OBJ_BONUS)
 
-clean: 
-	rm -f $(patsubst %, %.o, $(FILES-1)) $(patsubst %, %.o, $(FILES-2)) $(patsubst %, %.o, $(BONUS))
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ_1) $(OBJ_2) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

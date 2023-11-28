@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 22:02:54 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 10:55:18 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:04:08 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	count_words(const char *str, char delimiter)
 
 	count = 0;
 	in_word = 0;
-
 	while (*str)
 	{
 		if (*str != delimiter && !in_word)

@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:56 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/13 17:00:17 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:01:11 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	while (i <= len)
 	{
-		ft_strlcpy(substr, s + start, len + 1)
-		/*
-		substr[i] = s[start];
-		i++;
-		start++;
-		*/
+		ft_strlcpy(substr, s + start, len + 1);
 	}
-		substr[i] = '\0';
-		return (substr);
-	}
+	substr[i] = '\0';
+	return (substr);
+}
