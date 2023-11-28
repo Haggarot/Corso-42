@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_free_split_memory.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 17:28:58 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/27 23:27:49 by nbianchi         ###   ########.fr       */
+/*   Created: 2023/11/27 22:41:36 by nbianchi          #+#    #+#             */
+/*   Updated: 2023/11/27 22:42:07 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2);
+void	ft_free_split_memory(char **result)
 {
-	char	*join;
-	int		i;
-	int		j;
+	int	i;
 
-	if (!s1 || !s2)
-		return (NULL);
-	join = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!join)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
+	if (result)
 	{
-		join[i] = s1[i];
-		i++;
+		i = 0;
+		while (result[i] != NULL)
+		{
+			free(result[i]);
+			i++;
+		}
+		free(result);
 	}
-	while (s2[j])
-	{
-		join[i] = s1[j];
-		i++;
-		j++;
-	}
-	join[i] = '\0';
-	return (join);
 }
