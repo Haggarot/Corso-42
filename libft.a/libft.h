@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:46:20 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 09:13:27 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:17:41 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int		ft_strlen(const char *str);
 /*PRINT*/
 void	ft_putnchar(char *c, int n);
 void	ft_putchar(char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int nb, int fd);
 /*MEMORY*/
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
