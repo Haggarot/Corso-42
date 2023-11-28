@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 10:52:51 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 16:35:57 by nbianchi         ###   ########.fr       */
+/*   Created: 2023/11/28 15:08:44 by nbianchi          #+#    #+#             */
+/*   Updated: 2023/11/28 15:08:50 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*ss1;
-	unsigned char	*ss2;
+	size_t			i;
+	char			j;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	if (n == 0)
-		return (0);
-	ss1 = (unsigned char *)s1;
-	ss2 = (unsigned char *)s2;
-	while (ss1 && ss2 && n - 1 > 0)
+	i = 0;
+	j = 1;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		if (*ss1 != *ss2)
-			return ((int)(ss1 - ss2));
-		ss1++;
-		ss2++;
-		n--;
+		j = -1;
+		d += n - 1;
+		s += n - 1;
 	}
-	return (0);
+	while (i < n)
+	{
+		*d = *s;
+		d += j;
+		s += j;
+		i++;
+	}
+	return (dest);
 }

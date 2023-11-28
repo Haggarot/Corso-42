@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:56 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 11:01:11 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:23:03 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	size_t	i;
 
+	if (!s)
+		return (NULL);
 	substr = (char *)malloc(len * sizeof(char) + 1);
 	if (substr == NULL)
 		return (NULL);
-	i = 0;
-	while (i <= len)
-	{
-		ft_strlcpy(substr, s + start, len + 1);
-	}
-	substr[i] = '\0';
+	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }

@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 22:02:54 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 11:04:08 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:35:50 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,24 @@ static char	*allocate_and_copy(const char *str, int length)
 	return (word);
 }
 
+char	**ft_free(char **result, int word_index)
+{
+	while (word_index >= 0)
+	{
+		free(result[word_index]);
+		word_index--;
+	}
+	free(result);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		words_count;
 	char	**result;
 	int		word_index;
 	int		word_len;
 
-	words_count = count_words(s, c);
-	result = (char **)malloc(sizeof(char *) * (words_count + 1));
+	result = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!result)
 		return (NULL);
 	word_index = 0;
@@ -86,15 +95,7 @@ char	**ft_split(char const *s, char c)
 			word_len = word_length(s, c);
 			result[word_index] = allocate_and_copy(s, word_len);
 			if (!result[word_index])
-			{
-				while (word_index >= 0)
-				{
-					free(result[word_index]);
-					word_index--;
-				}
-				free(result);
-				return (NULL);
-			}
+				return (ft_free(result, word_index));
 			s += word_len;
 			word_index++;
 		}

@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:46:20 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 10:17:41 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:02:21 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 /*CHAR*/
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-
 /*CONVERSION*/
 int		ft_atoi(const char *nptr);
 #endif
