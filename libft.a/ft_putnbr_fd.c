@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:14:09 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 10:16:34 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:58:30 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
 		ft_putnbr_fd(147483648, fd);
-		return ();
+		return ;
 	}
 	else if (nb == 2147483647)
 	{
 		ft_putchar_fd('2', fd);
 		ft_putnbr_fd(147483647, fd);
-		return ();
+		return ;
 	}
 	else if (nb < 0)
 	{

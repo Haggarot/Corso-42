@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 22:02:54 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/27 22:43:47 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:55:18 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	count_words(const char *str, char delimiter)
 {
 	int	count;
 	int	in_word;
-	int	lenght;
 
 	count = 0;
 	in_word = 0;
+
 	while (*str)
 	{
 		if (*str != delimiter && !in_word)
@@ -56,9 +56,7 @@ static char	*allocate_and_copy(const char *str, int length)
 
 	word = (char *)malloc(sizeof(char) * (length + 1));
 	if (!word)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < length)
 	{
@@ -77,8 +75,8 @@ char	**ft_split(char const *s, char c)
 	int		word_index;
 	int		word_len;
 
-	result = (char **)malloc(sizeof(char *) * (words_count + 1));
 	words_count = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words_count + 1));
 	if (!result)
 		return (NULL);
 	word_index = 0;

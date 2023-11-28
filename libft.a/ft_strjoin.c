@@ -6,13 +6,13 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:28:58 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 10:22:57 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:37:30 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*join;
 	int		i;

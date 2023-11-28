@@ -6,11 +6,11 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:01:48 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 09:04:01 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:57:16 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> // for malloc
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
