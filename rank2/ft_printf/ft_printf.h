@@ -6,31 +6,21 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:02:02 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 16:03:25 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/16 12:58:25 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-# include "libft.h"
+# include <unistd.h>
+# include <stdlib.h>
 
-void		ft_put_hex(unsigned int num, const char format);
-void		ft_put_ptr(uintptr_t nb);
-int			ft_len(int n);
-int			hex_len(unsigned int num);
-int			len_ptr(uintptr_t nb);
-int			ft_unsigned_len(unsigned int nb);
-int			ft_putchar(int c);
-int			ft_putstr(char *str);
-int			ft_putnbr(int n);
-int			ft_puthex(unsigned int num, const char format);
-int			ft_putptr(uintptr_t ptr);
-int			ft_putunsigned(unsigned int nb);
-int			ft_conversion(va_list vl, const char format);
-int			ft_printf(const char *format, ...);
-char		*ft_char(char *s, unsigned int number, int len);
-char		*ft_itoa(int n);
-char		*ft_uitoa(unsigned int nb);
+int	ft_printf(const char *format, ...);
+int	ft_printchar(int c);
+int	ft_printstr(char *str);
+int	ft_printdigit(long digit, int base);
+int	ft_readformat(char format, va_list ap);
+
 
 #endif
