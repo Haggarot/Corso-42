@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   fts_charslave.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 10:45:45 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/12/16 13:33:56 by nbianchi         ###   ########.fr       */
+/*   Created: 2023/12/16 13:35:20 by nbianchi          #+#    #+#             */
+/*   Updated: 2023/12/16 16:18:01 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_printchar(int c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }
+
+int	ft_printstr(char *str)
+{
+	int	count;
+
+	count = 0;
+	while (*str)
+	{
+		ft_printchar((int)*str);
+		++count;
+		++str;
+	}
+	return (count);
+}
+

@@ -6,51 +6,12 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:07:01 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/12/16 12:54:49 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:27:28 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_printchar(int c)
-{
-	return (write(1, &c, 1));
-}
-
-int	ft_printstr(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str)
-	{
-		ft_printchar((int)*str);
-		++count;
-		++str;
-	}
-	return (count);
-}
-
-int	ft_printdigit(long digit, int base)
-{
-	int		count;
-	char	*simboli;
-
-	simboli = "0123456789abcdef";
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		return (ft_printdigit(-n, base) + 1);
-	}
-	else if (n < base)
-		return (ft_printchar[n]);
-	else if (n > base)
-	{
-		count = ft_printdigit(n / base, base);
-		return (count + ft_printdigit(n % base), base);
-	}
-}
-
+#include <stdio.h>
 
 int	ft_readformat(char format, va_list ap)
 {
@@ -61,10 +22,18 @@ int	ft_readformat(char format, va_list ap)
 		count = ft_printchar(va_arg(ap, int));
 	else if (format == 's')
 		count += ft_printstr(va_arg(ap, char *));
-	else if (format == 'd')
+	else if (format == 'd' || format == 'i')
 		count += ft_printdigit((long)(va_arg(ap, int)), 10);
 	else if (format == 'x')
 		count += ft_printdigit((long)(va_arg(ap, unsigned int)), 16);
+	else if (format == 'p')
+		count += ft_printpointer((long)(va_arg(ap, long)));
+	else if (format == 'X')
+		count += ft_printupdigit((long)(va_arg(ap, long)), 16);
+	else if (format == '%')
+		count += write(1, "%", 1);
+	else if (format == 'u')
+		count += ft_printunsign((long)(va_arg(ap, long)));
 	else
 		count += write(1, &format, 1);
 	return (count);
@@ -92,8 +61,21 @@ int	ft_printf(const char *format, ...)
 int	main(void)
 {
 	int	count;
+	int	var;
+	int	*ptr;
 
+	var = 42;
+	ptr = &var;
 	count = ft_printf("Ciao %s la tua ft_printf funziona bene\n", "Nicco");
-	ft_printf("sono stati scritti %d char", count);
-	return ;
+	ft_printf("i char scritti sono %d\n", count);
+	count = ft_printf("%u\n", 1165535);
+	ft_printf("i char scritti sono %d\n", count);
+	count = printf("%u\n", 1165535);
+	printf("i char scritti sono %d\n", count);
+	count = ft_printf("L'indirizzo richiesto è: %p\n", (void *)ptr);
+	ft_printf("i char scritti sono %d\n", count);
+	count = printf("L'indirizzo richiesto è: %p\n", (void *)ptr);
+	ft_printf("i char scritti sono %d\n", count);
+
+	return (count);
 }
