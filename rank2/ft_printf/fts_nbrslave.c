@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:02:56 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/12/16 16:18:13 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:58:39 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	ft_printpointer(unsigned long ptr)
 {
 	if (ptr == 0)
 		return (ft_printstr("0x0"));
-
 	ft_printstr("0x");
 	return (2 + ft_printdigit(ptr, 16));
 }

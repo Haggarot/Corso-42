@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 23:12:00 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/11/28 17:14:37 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/16 20:46:51 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,58 +14,54 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int	get_digit_count(int n)
+static char	*ft_char(char *s, unsigned int number, long int len)
 {
-	int	count;
-
-	count = 1;
-	if (n < 0)
+	while (number > 0)
 	{
-		n = -n;
-		count++;
+		s[len--] = 48 + (number % 10);
+		number = number / 10;
 	}
-	while (n / 10 != 0)
-	{
-		n /= 10;
-		count++;
-	}
-	return (count);
+	return (s);
 }
 
-char	*ft_check_num(int n)
+static long int	ft_len(int n)
 {
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else if (n == 0)
-		return (ft_strdup("0"));
-	else
-		return (ft_itoa(n));
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
+	char				*s;
+	long int			len;
+	unsigned int		number;
+	int					sign;
 
-	len = get_digit_count(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	sign = 1;
+	len = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(s))
 		return (NULL);
-	if (n == 0 || n == -2147483648)
-	{
-		str = ft_check_num(n);
-		return (str);
-	}
-	str[len] = '\0';
+	s[len--] = '\0';
+	if (n == 0)
+		s[0] = '0';
 	if (n < 0)
 	{
-		str[0] = '-';
-		n = -n;
+		sign *= -1;
+		number = n * -1;
+		s[0] = '-';
 	}
-	while (len-- > 0 && n > 0)
-	{
-		str[len] = '0' + (n % 10);
-		n /= 10;
-	}
-	return (str);
+	else
+		number = n;
+	s = ft_char(s, number, len);
+	return (s);
 }

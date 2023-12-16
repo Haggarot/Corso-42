@@ -6,7 +6,7 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:07:01 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/12/16 16:27:28 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:06:18 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (charcounter);
 }
-
+/*
 int	main(void)
 {
 	int	count;
@@ -68,14 +68,13 @@ int	main(void)
 	ptr = &var;
 	count = ft_printf("Ciao %s la tua ft_printf funziona bene\n", "Nicco");
 	ft_printf("i char scritti sono %d\n", count);
-	count = ft_printf("%u\n", 1165535);
+	count = ft_printf("%u\n", 4294967295);
 	ft_printf("i char scritti sono %d\n", count);
-	count = printf("%u\n", 1165535);
+	count = printf("%u\n", (unsigned int)4294967295);
 	printf("i char scritti sono %d\n", count);
 	count = ft_printf("L'indirizzo richiesto è: %p\n", (void *)ptr);
 	ft_printf("i char scritti sono %d\n", count);
 	count = printf("L'indirizzo richiesto è: %p\n", (void *)ptr);
 	ft_printf("i char scritti sono %d\n", count);
-
 	return (count);
-}
+}*/
