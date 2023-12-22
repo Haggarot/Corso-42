@@ -6,12 +6,13 @@
 /*   By: nbianchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:07:01 by nbianchi          #+#    #+#             */
-/*   Updated: 2023/12/16 20:51:05 by nbianchi         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:04:33 by nbianchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	ft_readformat(char format, va_list ap)
 {
